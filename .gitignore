@@ -1,3 +1,8 @@
+# Things specific to grading
+admin_secrets.py
+client_secrets.py
+credentials
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
