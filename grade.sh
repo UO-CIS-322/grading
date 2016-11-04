@@ -45,6 +45,9 @@ if [[ "${repo}" ==  "" ]] ; then
     exit 1
 fi
 git clone ${repo}  to_grade
+if [[ ! -d to_grade/secrets ]]; then
+   mkdir to_grade/secrets
+fi
 cp ${credentials} to_grade/secrets/client_secrets.py
 cp admin_secrets.py to_grade/secrets
 server="`python3 scripts/extract_server_name.py`.py"
