@@ -45,12 +45,9 @@ if [[ "${repo}" ==  "" ]] ; then
     exit 1
 fi
 git clone -q ${repo}  to_grade
-if [[ -d to_grade/secrets ]]; then 
-    echo "Copying into existing secrets directory"
-else
-    echo "Creating the secrets directory"
-    mkdir to_grade/secrets
-fi;
+if [[ ! -d to_grade/secrets ]]; then
+   mkdir to_grade/secrets
+fi
 cp ${credentials} to_grade/secrets/client_secrets.py
 cp admin_secrets.py to_grade/secrets
 # Project 7-9 specific: Google credentials file
