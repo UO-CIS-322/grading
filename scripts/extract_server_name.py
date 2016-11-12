@@ -9,4 +9,5 @@ try:
         server = server[:-3]
     print(server)
 except Exception as err: 
-    print("***Unable to extract server line***")
+    #print("***Unable to extract server line***")
+    pass
