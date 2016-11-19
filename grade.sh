@@ -81,6 +81,8 @@ echo "Configuring"
 bash ./configure 
 echo "Configuration complete"
 . env/bin/activate
+echo "Testing ... they should have some test cases"
+nosetests
 # echo "Attempting to create database for application"
 # cp ../scripts/create_db.py .  # Even if it clobbers the local copy
 # python3 create_db.py
