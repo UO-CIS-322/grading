@@ -84,7 +84,7 @@ echo "Configuration complete"
 # echo "Attempting to create database for application"
 # cp ../scripts/create_db.py .  # Even if it clobbers the local copy
 # python3 create_db.py
-echo "Starting server in ${server}"
-python3 ${server}
-
+echo "Starting server with 'make run'"
+#python3 ${server}
+make run 
 
