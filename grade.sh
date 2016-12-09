@@ -50,7 +50,6 @@ if [[ ! -d to_grade/secrets ]]; then
 fi
 cp ${credentials} to_grade/secrets/client_secrets.py
 cp admin_secrets.py to_grade/secrets
-# Project 7-9 specific: Google credentials file
 cp google_client_key.json to_grade/secrets
 pushd to_grade
 echo "Last push to repo:"
@@ -61,6 +60,9 @@ echo "Configuration complete"
 . env/bin/activate
 echo "Testing ... they should have some test cases"
 nosetests
+echo "**********************************"
+echo "*  ${author} "
+echo "**********************************"
 echo "Starting server with 'make run'"
 make run 
 
