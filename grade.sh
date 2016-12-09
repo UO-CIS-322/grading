@@ -52,29 +52,7 @@ cp ${credentials} to_grade/secrets/client_secrets.py
 cp admin_secrets.py to_grade/secrets
 # Project 7-9 specific: Google credentials file
 cp google_client_key.json to_grade/secrets
-# 
-# Ugh, project 7 I forgot to ask for server_main line 
-# in the client_secrets file. 
-#
-server="`python3 scripts/extract_server_name.py`.py"
-echo "Server from credentials is |${server}|"
 pushd to_grade
-if [[ "${server}" == ".py" ]]; then
-    echo "Didn't find a server_main configuration line"
-    ## Next command is fragile --- no spaces either side of = 
-    server="`grep -l flask.Flask *.py`"
-    if [[ "${server}" == "" ]]; then
-	echo "Also didn't find an invocation of flask.Flask"
-	exit 1
-    else
-	echo "Found a flask server in ${server}"
-    fi;
-fi; 
-if [[ ! -f ${server} ]]; then
-    echo "server_main is ${server} but that file is not present"
-    exit 1
-fi;
-
 echo "Last push to repo:"
 git log | head -n 8 | grep Date
 echo "Configuring"
@@ -83,10 +61,6 @@ echo "Configuration complete"
 . env/bin/activate
 echo "Testing ... they should have some test cases"
 nosetests
-# echo "Attempting to create database for application"
-# cp ../scripts/create_db.py .  # Even if it clobbers the local copy
-# python3 create_db.py
 echo "Starting server with 'make run'"
-#python3 ${server}
 make run 
 
