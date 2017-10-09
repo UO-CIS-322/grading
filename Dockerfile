@@ -8,4 +8,4 @@ COPY . .
 
 RUN make install
 	
-CMD bash grade.sh
+CMD bash start_grading.sh

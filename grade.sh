@@ -36,9 +36,9 @@ else
 fi
 
 cp ${credentials}  scripts/credentials.py
-author="`python3 scripts/extract_author.py`"
+author="`python scripts/extract_author.py`"
 echo "Author: ${author}"
-repo="`python3 scripts/extract_repo.py`"
+repo="`python scripts/extract_repo.py`"
 echo "Repo: ${repo}"
 if [[ "${repo}" ==  "" ]] ; then
     echo "Missing repository URL; can't go on"
