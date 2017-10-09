@@ -1,15 +1,11 @@
 FROM python:3
 
-
-RUN apt-get update && apt-get -y install build-essential 
+RUN apt-get update && apt-get -y install git-core mongodb-org-server
 
 WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 RUN make install
 	
-CMD make run
+CMD bash grade.sh
