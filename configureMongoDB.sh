@@ -30,7 +30,7 @@ security:
  
 EOF
  
-service mongod start
+service mongodb start
 sleep 5
  
 mongo admin <<'EOF'
