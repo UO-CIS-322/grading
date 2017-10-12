@@ -4,11 +4,6 @@ PROJECTS=`grep -v '^#' projects_config.conf` #read projects(s) from projects_con
 
 mkdir credentials
 
-for PROJECT in $PROJECTS; do
-   echo "Adding credentials to credentials folder"
-   cp projects/$PROJECT/credentials.ini credentials/$PROJECT-credentials.ini
-done
-
 for NAME in $NAMES; do
    for PROJECT in $PROJECTS; do
       echo "Adding credentials to credentials folder"
