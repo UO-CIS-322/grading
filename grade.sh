@@ -27,6 +27,8 @@ rm -f credentials.py
 # Find the files and links we need
 # 
 prefix="$1"
+env  credentials.py
+python -m venv env
 credentials=`scripts/glob.sh ${prefix}`
 if  [[ ! -f ${credentials} ]] ; then
     echo "Didn't match ${prefix} to a credentials file"
