@@ -35,7 +35,7 @@ else
     echo "Using credentials file ${credentials}"
 fi
 
-cp ${credentials}  scripts/credentials.py
+cp ${credentials} scripts/credentials.py
 author="`python scripts/extract_author.py`"
 echo "Author: ${author}"
 repo="`python scripts/extract_repo.py`"
