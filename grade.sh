@@ -27,8 +27,6 @@ rm -f credentials.py
 # Find the files and links we need
 # 
 prefix="$1"
-env  credentials.py
-python -m venv env
 credentials=`scripts/glob.sh ${prefix}`
 if  [[ ! -f ${credentials} ]] ; then
     echo "Didn't match ${prefix} to a credentials file"
@@ -37,7 +35,7 @@ else
     echo "Using credentials file ${credentials}"
 fi
 
-cp ${credentials} scripts/credentials.py
+cp ${credentials} scripts/credentials.ini
 author="`python scripts/extract_author.py`"
 echo "Author: ${author}"
 repo="`python scripts/extract_repo.py`"
