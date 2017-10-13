@@ -18,8 +18,12 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+#setup mongo
 RUN chmod +x configureMongoDB.sh
 RUN bash configureMongoDB.sh
+
+#Lots of projects have sh not bash and source breaks
+RUN ln -sf bash /bin/sh
 
 #go
 CMD bash start_grading.sh
