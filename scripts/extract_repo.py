@@ -5,10 +5,10 @@ File must have fixed name credentials.py, in this directory
 import configparser
 try:
     config = configparser.ConfigParser()
-    config.read('credentials.py')
-    print(config['repo'])
+    config.read('scripts/credentials.conf')
+    print(config['DEFAULT']['repo'])
 except Exception as err: 
-    print("")    # Hopefully bash thinks this is a falsy value? 
+    print("***Unable to extract repo line***")
     sys.exit(1)  # Error code for shell
 
     
