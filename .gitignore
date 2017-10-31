@@ -3,6 +3,7 @@ admin_secrets.py
 client_secrets.py
 credentials
 credentials.ini
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
