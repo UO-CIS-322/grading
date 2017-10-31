@@ -1,2 +1,0 @@
-Please delete me and the folder I'm in.
-Use the projects folder to hold your credential files
