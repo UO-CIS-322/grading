@@ -7,7 +7,7 @@ RUN echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" | 
 RUN apt-get update && apt-get -y --force-yes install git-core mongodb-org build-essential
 
 #setup python requirements
-COPY requirements.txt ./
+COPY gradingApplication/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 #needed for mongo
@@ -16,7 +16,7 @@ RUN mkdir -p /data/db
 #setup grader app & mongo
 WORKDIR /usr/src/app
 
-COPY . .
+COPY gradingApplication/. .
 
 #setup mongo
 RUN chmod +x configureMongoDB.sh
