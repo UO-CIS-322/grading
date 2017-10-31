@@ -13,3 +13,4 @@ for NAME in $NAMES; do
    echo "Grading projects for $NAME"
    bash grade.sh $NAME
 done
+popd
